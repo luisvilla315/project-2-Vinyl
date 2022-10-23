@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- top nav bar -->
+
+<div class="hero">
+    <nav class="nav">
+        <div class="logo-text"><img src="./images/whiteLogoo.ico" class="logo">Vinyl</div>
+        <ul>
+            <li><a href="/" class="butts">Home</a></li>
+            <li><a href="#" class="butts">Search</a></li>
+            <li><a href="#" class=butts>Favorites</a></li>
+        </ul>
+      {{#if loggedIn}}
+    <!--<a href="/login" id="logout" class="btn js-modal-trigger" data-target="modal-js-example">Logout</a>-->
+    <div class="wrapper">
+  <div class="navbar">
+      <div class="nav_right">
+          <ul>
+              <li class="nr_li dd_main">
+                  <img src="https://aesusdesign.com/wp-content/uploads/2019/06/mans-blank-profile.png" alt="profile_img">
+                  
+                  <div class="dd_menu">
+                      <div class="dd_left">
+                          <ul>
+                              <li><i class="far fa-star"></i></li>
+                              <li><i class="fas fa-cog"></i></li>
+                              <li><i class="fas fa-sign-out-alt"></i></li>
+                          </ul>
+                      </div>
+                      <div class="dd_right">
+                          <ul>
+                              <li>Favorites</li>
+                              <li>Settings</li>
+                              <li id="logout">Logout</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+      {{else}}
+      <a href="/login" id="register" class="btn js-modal-trigger" data-target="modal-js-example">Sign in</a>
+      {{/if}}
+    </nav>
+
+      <!-- center text -->
+
+      <div class="intro">
+        <p>find new music<p>
+        <h2>EXPERIENCES</h2>
+        <p>make new</p>
+      </div>
+
+      <!-- search bar -->
+
+      <div class="search-bar">
+        <form action="" onSubmit="return false;">
+          <input type="search" id="searchTerm" placeholder="Artists, Songs, Albums" required>
+          <i class="fa fa-search" id="searchTermBtn"></i>
+        </form>
+      </div>
+        
+    </div>
+    
+    
+
+      <!-- songs go here -->
+
+        <main id="songs">
+        </main>
+ 
+ <script>
+        document.querySelector(".dd_main").addEventListener("click", function(){
+		this.classList.toggle("active");
+    })
+ </script>     
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+ 
+
